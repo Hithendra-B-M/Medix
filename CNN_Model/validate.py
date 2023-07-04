@@ -5,7 +5,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
-img_width, img_height = 150, 150
+img_width, img_height = 150, 150 
 
 model = tf.keras.models.load_model('CAESARS.h5')
 
