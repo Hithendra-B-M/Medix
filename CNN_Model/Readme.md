@@ -155,4 +155,13 @@ You can find the Entire Model Test Report [Here](CNN_Model_Analysis.pdf)
 
 ![Classwise-Accuracy](https://github.com/k-arthik-r/Medix/assets/111432615/021ed322-a789-44de-84a1-d7b01ba49dd0)
 
+----------------------------
 
+## License
+
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+
+----------------------------
+
+## Feedback
+If you have any feedback, please reach out to us at voidex.developer@gmail.com
