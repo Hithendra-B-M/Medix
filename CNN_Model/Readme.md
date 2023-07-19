@@ -61,8 +61,9 @@ Next,
 - Click on Add Data -> NIH | Chest-X-Ray | Voidex (Search for this)
 - Now, select add dataset
 
-- After Successful Adding dataset,
+- After Successfully Adding dataset,
 - Copy the code present in [train.py](train.py)
-- Include it in the code section of the kaggle notebook and run it.
+- Include it in the code section of the kaggle notebook.
+- goto More -> Accelerator -> GPU P100
 - Wait till all the Epoch are Completed and check for the HDF(.h5) file in the output folder of the kaggle Notebook.
 
