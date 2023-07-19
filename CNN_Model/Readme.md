@@ -42,4 +42,27 @@ API Command
 kaggle datasets download -d voidexiae/nih-chest-x-ray-voidex
 ```
 
+Link
+```bash
+https://www.kaggle.com/datasets/voidexiae/nih-chest-x-ray-voidex
+```
 ----------------------------
+
+## How to train the Model using Kaggle?
+
+Visit
+```bash
+https://www.kaggle.com/
+```
+
+Next, 
+- After Successfull Login,
+- Click on Create -> New Notebook
+- Click on Add Data -> NIH | Chest-X-Ray | Voidex (Search for this)
+- Now, select add dataset
+
+- After Successful Adding dataset,
+- Copy the code present in [train.py](train.py)
+- Include it in the code section of the kaggle notebook and run it.
+- Wait till all the Epoch are Completed and check for the HDF(.h5) file in the output folder of the kaggle Notebook.
+
