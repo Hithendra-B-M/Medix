@@ -7,7 +7,7 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
 img_width, img_height = 150, 150 
 
-model = tf.keras.models.load_model('CAESARS.h5')
+model = tf.keras.models.load_model('Voidex.h5')
 
 
 def predict_diseases(image_path):
