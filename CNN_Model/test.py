@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 from sklearn.metrics import classification_report, confusion_matrix
 
 
-model = load_model('CAESARS.h5')
+model = load_model('Voidex.h5')
 
 
 class_names = [
