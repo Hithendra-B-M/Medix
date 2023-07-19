@@ -151,5 +151,5 @@ After Successfully testing the Deep Learning Model with 26,448 Image we obtained
 
 ![Classwise-Accuracy](https://github.com/k-arthik-r/Medix/assets/111432615/021ed322-a789-44de-84a1-d7b01ba49dd0)
 
-
+You can find the Entire Model Test Report [Here](CNN_Model_Analysis)
 
