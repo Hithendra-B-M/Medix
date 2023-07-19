@@ -136,6 +136,26 @@ The output of the last convolutional layer is flattened into a 1-dimensional vec
 ### Model Saving
 After training, the model is saved to a file named 'Voidex.h5' using the save function.
 
+### Output
+The Model is capable of Classifiying the Images into 18 Different classes Namely,
+- Atelectasis X-001
+- Brain_Tumor X-002
+- Cardiomegaly X-003
+- Consolidation X-004
+- Edema X-005
+- Effusion X-006
+- Emphysema X-007
+- Fibrosis X-008
+- Hernia X-009
+- Infiltration X-010
+- Mass X-011
+- No_Brain_Finding X-012
+- No_Lung_Finding X-013
+- Nodule X-014
+- Pleural X-015
+- Pneumonia X-016
+- Pneumothorax X-017
+- Tuberculosis X-018
 ----------------------------
 
 ## Test Results
