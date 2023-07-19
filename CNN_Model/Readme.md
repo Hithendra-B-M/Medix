@@ -68,3 +68,11 @@ Next,
 - Click on Run.
 - Wait till all the Epoch are Completed and check for the HDF(.h5) file in the output folder of the kaggle Notebook.
 
+## Use test and validate
+import both test.py and validate.py python file along with Voidex.h5 and run it using,
+```bash
+python test.py
+```
+```bash
+python validate.py
+```
