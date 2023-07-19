@@ -59,6 +59,6 @@ model.fit(
     validation_data=validation_generator,
     validation_steps=validation_generator.samples // batch_size)
 
-model.save('CAESARS.h5')
+model.save('Voidex.h5')
 
 
