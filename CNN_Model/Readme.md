@@ -79,6 +79,22 @@ python validate.py
 
 ----------------------------
 
+## About the Dataset
+
+The entire dataset is divided into 3 category namely test, train, validate in the ratio 2 : 7 : 1
+
+- Total Images : 1,75,245
+- Test : 26, 448
+- Train : 1,33,896
+- Validate : 14, 901
+
+Origin Source:
+
+```bash
+https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community
+```
+----------------------------
+
 ## About the Model
 
 ### Input Layer
@@ -118,11 +134,22 @@ The output of the last convolutional layer is flattened into a 1-dimensional vec
 - The validation_generator is used to provide validation data, with the number of validation steps set to validation_generator.samples // batch_size.
   
 ### Model Saving
-After training, the model is saved to a file named 'CAESARS.h5' using the save function.
+After training, the model is saved to a file named 'Voidex.h5' using the save function.
 
 ----------------------------
 
 ## Test Results
 
-After Successfully testing the Deep Learning Model with 26,000 Image we obtained an Accuracy of 85%.
+After Successfully testing the Deep Learning Model with 26,448 Image we obtained an Accuracy of `84.69%`.
+
+### Confusion Matrix:
+
+![Confusion Matrix](https://github.com/k-arthik-r/Medix/assets/111432615/3c809fae-7fdb-4868-8555-78fe6de9356d)
+
+
+### Classwise Accuracy:
+
+![Classwise-Accuracy](https://github.com/k-arthik-r/Medix/assets/111432615/021ed322-a789-44de-84a1-d7b01ba49dd0)
+
+
 
