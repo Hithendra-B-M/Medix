@@ -65,5 +65,6 @@ Next,
 - Copy the code present in [train.py](train.py)
 - Include it in the code section of the kaggle notebook.
 - goto More -> Accelerator -> GPU P100
+- Click on Run.
 - Wait till all the Epoch are Completed and check for the HDF(.h5) file in the output folder of the kaggle Notebook.
 
