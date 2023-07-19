@@ -142,6 +142,10 @@ After training, the model is saved to a file named 'Voidex.h5' using the save fu
 
 After Successfully testing the Deep Learning Model with 26,448 Image we obtained an Accuracy of `84.69%`.
 
+You can find the Entire Model Test Report [Here](CNN_Model_Analysis.pdf)
+
+
+
 ### Confusion Matrix:
 
 ![Confusion Matrix](https://github.com/k-arthik-r/Medix/assets/111432615/3c809fae-7fdb-4868-8555-78fe6de9356d)
@@ -151,5 +155,4 @@ After Successfully testing the Deep Learning Model with 26,448 Image we obtained
 
 ![Classwise-Accuracy](https://github.com/k-arthik-r/Medix/assets/111432615/021ed322-a789-44de-84a1-d7b01ba49dd0)
 
-You can find the Entire Model Test Report [Here](CNN_Model_Analysis)
 
