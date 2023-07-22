@@ -1,5 +1,5 @@
 body {
-    background-image: url('hospital.jpg');
+    background-image: url('./Static/hospital.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -248,22 +248,9 @@ body {
     
   }
 
-  .navbar a::before {
-    content: "";
-    position: absolute;
-    width: 80%;
-    height: 3px;
-    bottom: -3px; /* Position the line just below the text */
-    background-color: #ffffff; /* Change the color to your desired effect */
-    visibility: hidden; /* Hide the line by default */
-    transform: scaleX(0); /* Initially scale the line to 0 */
-    transition: all 0.3s ease; /* Add smooth transition effect */
-  }
+  
 
-  .navbar a:hover::before {
-    visibility: visible; /* Show the line on hover */
-    transform: scaleX(1); /* Scale the line to full width on hover */
-  }
+ 
   .form-group input[type="submit"]:hover {
     background-color: #ffffff00;
     color: rgb(255, 255, 255);
