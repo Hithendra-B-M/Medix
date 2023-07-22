@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,65 +14,64 @@
 
 <body>
 
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <div>
-          <img src="Static/Logo.png" alt="Logo"/>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div>
+      <img src="Static/Logo.png" alt="Logo" />
+    </div>
+    <div class="right-buttons">
+      <a href="about.html">About Us</a>
+      <a href="homepage.html">Home</a>
+      <a href="report.html">Report</a>
+
+    </div>
+  </div>
+  <br><br>
+  <!-- Left Section - Creative Registration Form -->
+  <div class="left-section">
+    <br><br><br>
+    <div class="container">
+
+      <h2>Registration Form</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Patient Name:</label>
+          <input type="text" id="name" name="name">
         </div>
-        <div class="right-buttons">
-          <a href="about.html">About Us</a>
-          <a href="homepage.html">Home</a>
-          <a href="report.html">Report</a>
-          
+
+        <div class="form-group">
+          <label for="email">Patient ID:</label>
+          <input type="text" id="PID" name="PID">
         </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Right Section - Upload -->
+  <div class="right-section">
+    <h2>Upload</h2>
+    <form>
+      <label for="fileUpload" class="file-label" style="text-align: center;font-size: medium;">Choose File</label>
+      <input type="file" id="fileUpload" name="fileUpload" class="hidden-input">
+      <span id="fileNameDisplay" class="file-name-display">No file chosen</span>
+      <div class="form-group" style=" margin-top: 5px;">
+        <input type="submit" value="Submit" style="width: 15%; height: 35px; background-color: #25beaf;">
       </div>
-    <br><br>
-      <!-- Left Section - Creative Registration Form -->
-      <div class="left-section">
-        <br><br><br>
-        <div class="container">
-  
-          <h2>Registration Form</h2>
-          <form>
-            <div class="form-group">
-              <label for="name">Patient Name:</label>
-              <input type="text" id="name" name="name">
-            </div>
-      
-            <div class="form-group">
-              <label for="email">Patient ID:</label>
-              <input type="text" id="PID" name="PID">
-            </div>
-          </form>
-        </div>
+      <div class="form-group">
+        <input type="text" id="textBox" name="textBox" style="vertical-align: top;width: 80%;height: 180px;">
       </div>
-    
-      <!-- Right Section - Upload -->
-      <div class="right-section">
-        <h2>Upload</h2>
-        <form>
-          <label for="fileUpload" class="file-label" style="text-align: center;font-size: medium;">Choose File</label>
-          <input type="file" id="fileUpload" name="fileUpload" class="hidden-input">
-          <span id="fileNameDisplay" class="file-name-display">No file chosen</span>
-          <div class="form-group" style=" margin-top: 5px;">
-            <input type="submit" value="Submit" style="width: 15%; height: 35px; background-color: #25beaf;">
-          </div>
-          <div class="form-group"> 
-            <input type="text" id="textBox" name="textBox" style="vertical-align: top;width: 80%;height: 180px;">
-          </div>
-          <div class="form-group">
-            <input type="submit" value="Save" style="width: 41%;background-color: #00c04b;">
-            <input type="submit" value="Clear" style="width: 41%;background-color: #ff3632;">
-          </div>
-        </form>
+      <div class="form-group">
+        <input type="submit" value="Save" style="width: 41%;background-color: #00c04b;">
+        <input type="submit" value="Clear" style="width: 41%;background-color: #ff3632;">
       </div>
-      <div class="footer">
-        &copy; 2023 Karthik. All rights reserved.
-      </div>
-      
-      <script src="homepage.js"></script>
-      
+    </form>
+  </div>
+  <div class="footer">
+    &copy; 2023 Karthik. All rights reserved.
+  </div>
+
+  <script src="homepage.js"></script>
+
 </body>
 
 </html>
-
