@@ -1,0 +1,264 @@
+body {
+    background-image: url('./Static/reportbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+    color: #00004d;
+  }
+  /* CSS for the navigation bar */
+  .navbar {
+    background-color: #007fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .navbar img {
+    height: 50px;
+    width: 150px;
+    margin-left: 20px;
+  }
+
+  .navbar .right-buttons {
+    margin-right: 40px;
+  }
+
+  .navbar a {
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .navbar a:hover {
+    background-color: #ffffff;
+    color: black;
+  }
+  @media screen and (max-width: 768px) {
+    body {
+      background-size: auto;
+    }
+
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .navbar img {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .right-buttons {
+      margin-right: 0;
+      display: flex;
+      gap: 10px;
+    }
+
+    .left-section,
+    .right-section {
+      width: 100%;
+      float: none;
+    }
+
+    
+  }
+  /* CSS for the divisions */
+  .left-section,
+  .right-section {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+  }
+
+  .left-section {
+    background-color: #ffffff00;
+  }
+  body {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    
+  }
+
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding:40px;
+    background-color: #ffffff3a;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  
+  .form-group input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #3da4f8;
+    font-size: 16px;
+    background-color: #3da4f856;
+  }
+
+  .form-group input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0076f5;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .form-group input[type="submit"]:hover {
+    background-color: #ffffff;
+  }
+  
+
+  /* Your existing CSS rules here */
+
+  /* Additional CSS for mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    body {
+      background-size: auto;
+    }
+
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .navbar img {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .right-buttons {
+      margin-right: 0;
+      display: flex;
+      gap: 10px;
+    }
+
+    .left-section,
+    .right-section {
+      width: 100%;
+      float: none;
+    }
+
+    .container {
+      padding: 20px;
+      margin: 20px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="text"] {
+      width: 100%;
+    }
+
+    .form-group input[type="submit"] {
+      width: 100%;
+    }
+
+    .right-section {
+      margin-top: 30px;
+      
+    }
+  }
+  
+
+.hidden-input {
+  display: none;
+}
+
+
+/* Additional CSS to style all buttons */
+.navbar a {
+    transition: all 0.3s ease; /* Add smooth transition effect */
+    font-size: 20px; /* Increase font size */
+    font-weight: bold;
+    text-transform: uppercase; /* Convert text to uppercase */
+    position: relative; /* Add positioning to create the graphical effect */
+  }
+
+  .navbar a:hover {
+    background-color: #ffffff00;
+    color: rgb(255, 255, 255);
+    font-size: 24px; /* Increase font size on hover */
+    font-weight: bolder;
+    
+  }
+
+  
+
+ 
+  .form-group input[type="submit"]:hover {
+    background-color: #ffffff00;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    
+  }
+   label {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Style the date input container */
+    .date-input-container {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    /* Style the date input */
+    .date-input-container input[type="date"] {
+        
+        padding: 10px;
+        border-radius: 5px;
+        width: 180px;
+        border: 1px solid #3da4f8;
+        background-color: #3da4f856;
+        font-size: 16px;
+    }
+
+    /* Style the calendar icon */
+   
+    .date-input-container {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+      }
+      .date-input-container::after {
+        content: "\f073"; /* Unicode for the calendar icon (Font Awesome) */
+        font-family: 'Poppins', sans-serif;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px; /* Increase the padding to increase clickable area */
+        font-size: 20px;
+        color: #ffffff00;
+        pointer-events: none; /* Make the icon ignore mouse clicks */
+      }
