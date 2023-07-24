@@ -17,3 +17,14 @@ fileInput.addEventListener("change", updateFileNameDisplay);
 
 // Call the function on page load to set the initial message
 updateFileNameDisplay();
+
+function toggleSubmitButton() {
+  const fileInput = document.getElementById('fileUpload');
+  const submitButton = document.getElementById('submitButton');
+
+  if (fileInput.files.length > 0) {
+    submitButton.disabled = false;
+  } else {
+    submitButton.disabled = true;
+  }
+}

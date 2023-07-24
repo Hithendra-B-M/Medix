@@ -8,7 +8,7 @@
   <link rel="icon" href="Static/Logo_IMG_BR.png" type="image/x-icon">
   <link rel="shortcut icon" href="Logo_IMG_BR.png" type="image/x-icon">
   <link rel="stylesheet" href="homepage.css">
-  <title>Medix</title>
+  <title>Medix-Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -23,8 +23,6 @@
           <a href="about.html">About Us</a>
           <a href="homepage.html">Home</a>
           <a href="report.html">Report</a>
-
-          
         </div>
       </div>
     <br><br><br><br><br>
@@ -37,7 +35,7 @@
           <form>
             <div class="form-group">
               <label for="name">Patient Name:</label>
-              <input type="text" id="name" name="name">
+              <input type="text" id="name" name="name" autocomplete="off">
             </div>
       
             <div class="form-group">
@@ -52,26 +50,24 @@
       <div class="right-section">
         <h2>Upload</h2>
         <form>
-          <label for="fileUpload" class="file-label" style="text-align: center;font-size: medium;">Choose File</label>
-          <input type="file" id="fileUpload" name="fileUpload" class="hidden-input">
+          <label for="fileUpload" class="file-label" style="text-align: center; font-size: medium;">Choose File</label>
+          <input type="file" id="fileUpload" name="fileUpload" class="hidden-input" onchange="toggleSubmitButton()">
           <span id="fileNameDisplay" class="file-name-display">No file chosen</span>
-          <div class="form-group" style=" margin-top: 5px;">
-            <input type="submit" value="Submit" style="width: 15%; height: 35px; background-color: #25beaf;">
-          </div>
-          <div class="form-group"> 
-            <input type="text" id="textBox" name="textBox" style="vertical-align: top;width: 80%;height: 180px;">
+          <div class="form-group" style="margin-top: 5px;">
+            <input type="submit" value="Submit" id="submitButton" style="width: 15%; height: 35px; background-color: #25beaf;" disabled>
           </div>
           <div class="form-group">
-            <input type="submit" value="Save" style="width: 41%;background-color: #00c04b;">
-            <input type="submit" value="Clear" style="width: 41%;background-color: #ff3632;">
+            <input type="text" id="textBox" name="textBox" style="vertical-align: top; width: 80%; height: 180px;">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Save" style="width: 41%; background-color: #00c04b;">
+            <input type="submit" value="Clear" style="width: 41%; background-color: #ff3632;">
           </div>
         </form>
       </div>
+      
       <div class="footer">
-
-        &copy; 2023 Karthik,Chinmaya,Ananya. All rights reserved.
-
-        Copyrights &copy; 2023 Chinmaya B N | All rights reserved.
+        Copyrights &copy; All rights are reserved for Medix developers.
 
       </div>
       
