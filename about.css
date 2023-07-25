@@ -1,229 +1,248 @@
 body {
-    background-image: url('Static/aboutbg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    font-family: 'Poppins', sans-serif;
-  }
-  /* CSS for the navigation bar */
-  .navbar {
-    background-color: #55e6d7;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 99999; /* To make sure it stays above other elements on the page */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url('Static/aboutbg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Poppins', sans-serif;
+  background-attachment: fixed;
+}
+
+/* CSS for the navigation bar */
+.navbar {
+  background-color: #55e6d7;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  /* To make sure it stays above other elements on the page */
 }
 
 .navbar img {
-    height: 50px;
-    width: 150px;
-    margin-left: 20px;
+  height: 50px;
+  width: 150px;
+  margin-left: 20px;
 }
 
 .navbar .right-buttons {
-    margin-right: 40px;
+  margin-right: 40px;
 }
 
 .navbar a {
-    color: #ffffff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 .navbar a:hover {
-    background-color: #ffffff;
-    color: black;
+  background-color:black;
+  color: black;
 }
 
-  @media screen and (max-width: 768px) {
-    body {
-      background-size: auto;
-    }
 
-    .navbar {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 0;
-    }
 
-    .navbar img {
-      margin-left: 0;
-      margin-bottom: 10px;
-    }
+/* Hide the right buttons when the menu is active */
+.active .right-buttons {
+  display: none;
+}
 
-    .right-buttons {
-      margin-right: 0;
-      display: flex;
-      gap: 10px;
-    }
-
-    .left-section,
-    .right-section {
-      width: 100%;
-      float: none;
-    }
-
-    
+@media screen and (max-width: 768px) {
+  body {
+    background-size: auto;
   }
- 
-  
 
-  /* Your existing CSS rules here */
-
-  /* Additional CSS for mobile responsiveness */
-  @media screen and (max-width: 768px) {
-    body {
-      background-size: auto;
-    }
-
-    .navbar {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 0;
-    }
-
-    .navbar img {
-      margin-left: 0;
-      margin-bottom: 10px;
-    }
-
-    .right-buttons {
-      margin-right: 0;
-      display: flex;
-      gap: 10px;
-    }
-
-    .left-section,
-    .right-section {
-      width: 100%;
-      float: none;
-    }
-
-    .container {
-      padding: 20px;
-      margin: 20px;
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="text"] {
-      width: 100%;
-    }
-
-    .form-group input[type="submit"] {
-      width: 100%;
-    }
-
-    .right-section {
-      margin-top: 30px;
-      
-    }
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
   }
- 
+
+  .navbar img {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .right-buttons {
+    margin-right: 0;
+    display: flex;
+    gap: 10px;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    float: none;
+  }
+
+
+}
+
+
+
+/* Your existing CSS rules here */
+
+/* Additional CSS for mobile responsiveness */
+@media screen and (max-width: 768px) {
+  body {
+    background-size: auto;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .navbar img {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .right-buttons {
+    margin-right: 0;
+    display: flex;
+    gap: 10px;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    float: none;
+  }
+
+  .container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="text"] {
+    width: 100%;
+  }
+
+  .form-group input[type="submit"] {
+    width: 100%;
+  }
+
+  .right-section {
+    margin-top: 30px;
+
+  }
+}
+
 
 
 /* Styling the "Choose File" button on hover */
 
 
 .footer {
-    text-align: center;
-    background-color: #77d5cb;
-    padding: 10px;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
- 
+  text-align: center;
+  background-color: #77d5cb;
+  padding: 10px;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 /* Additional CSS to style all buttons */
 .navbar a {
-    transition: all 0.3s ease; /* Add smooth transition effect */
-    font-size: 20px; /* Increase font size */
-    font-weight: bold;
-    text-transform: uppercase; /* Convert text to uppercase */
-    position: relative; /* Add positioning to create the graphical effect */
+  transition: all 0.3s ease;
+  /* Add smooth transition effect */
+  font-size: 20px;
+  /* Increase font size */
+  font-weight: bold;
+  text-transform: uppercase;
+  /* Convert text to uppercase */
+  position: relative;
+  /* Add positioning to create the graphical effect */
+}
+
+.navbar a:hover {
+  background-color: #ffffff00;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  /* Increase font size on hover */
+  font-weight: bolder;
+
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-content {
+  margin-top: -5%;
+  background-color: #ffffff56;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.vision-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #4dc2a5;
+}
+
+.vision-section h2 {
+  margin-bottom: 1rem;
+}
+
+
+.header {
+  background-color: #007BFF;
+  color:black;
+  text-align: center;
+  padding: 1rem;
+}
+
+.heading-container {
+  text-align: center;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.innovative-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #007BFF, #00C851);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+
+
+/* Animation */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 
-  .navbar a:hover {
-    background-color: #ffffff00;
-    color: rgb(255, 255, 255);
-    font-size: 24px; /* Increase font size on hover */
-    font-weight: bolder;
-    
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-
-  .about-content {
-    margin-top: -5%;
-    background-color: #ffffff56;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-  }
-
-  .vision-section {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 2px solid #4dc2a5;
-  }
-
-  .vision-section h2 {
-    margin-bottom: 1rem;
-  }
-
- 
-  .header {
-    background-color: #007BFF;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .heading-container {
-    text-align: center;
-    margin-top: 2rem;
-    position: relative;
-  }
-
-  .innovative-heading {
-    font-size: 3rem;
-    font-weight: bold;
-    background-image: linear-gradient(to right, #007BFF, #00C851);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    position: relative;
-    display: inline-block;
-  }
-
-
-
-  /* Animation */
-  @keyframes slide-in {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .innovative-heading {
-    animation: slide-in 1s forwards;
-  }
+.innovative-heading {
+  animation: slide-in 1s forwards;
+}
