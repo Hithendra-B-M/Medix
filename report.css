@@ -13,7 +13,7 @@ body {
 
 /* CSS for the navigation bar */
 .navbar {
-  background-color: #007fff;
+  background-color: #0076f5;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
@@ -23,12 +23,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  z-index:999;
 }
 
 .navbar img {
   height: 50px;
   width: 150px;
-  margin-left: 20px;
+  margin-top: 0.7rem;
 }
 
 .navbar .right-buttons {
@@ -41,24 +42,33 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  transition: font-size 0.2s ease; /* Reduced transition duration */
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
 }
 
 .navbar a:hover {
-  background-color: #ffffff;
+  background-color: black;
   color: black;
+  background-color: #ffffff00;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bolder;
 }
+
 .menu-wrap {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1;
+  z-index: 9991;
 }
 
 .menu-wrap .toggler {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 9992;
   cursor: pointer;
   width: 50px;
   height: 50px;
@@ -73,14 +83,14 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 1;
+  z-index: 9999;
 }
 
 /* Hamburger Line */
 .menu-wrap .hamburger > div {
   position: relative;
   flex: none;
-  width: 100%;
+  width: 30px;
   height: 2px;
   background: #fff;
   display: flex;
@@ -94,9 +104,9 @@ body {
 .menu-wrap .hamburger > div::after {
   content: "";
   position: absolute;
-  z-index: 1;
+  z-index: 99999;
   top: -10px;
-  width: 100%;
+  width: 30px;
   height: 2px;
   background: inherit;
 }
@@ -273,9 +283,11 @@ body {
   .menu-wrap {
     display: block;
   }
-
+  
   .left-section,
   .right-section {
+    margin-left: 1rem;
+    margin-right: 1rem;
     width: 100%;
     float: none;
   }
@@ -297,8 +309,7 @@ body {
     width: 100%;
     margin-top: 10px;
   }
-
-  .right-section {
-    margin-top: 30px;
+  .right-section{
+    margin-left: 2.5rem;
   }
 }

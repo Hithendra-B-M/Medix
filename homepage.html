@@ -80,18 +80,12 @@
           name="fileUpload"
           class="hidden-input"
           onchange="toggleSubmitButton()"
-        />
+        /><br>
         <span id="fileNameDisplay" class="file-name-display"
           >No file chosen</span
         >
-        <div class="form-group" style="margin-top: 5px">
-          <input
-            type="submit"
-            value="Submit"
-            id="submitButton"
-            style="width: 15%; height: 35px; background-color: #25beaf"
-            disabled
-          />
+        <div class="form-group" style="margin-top:5px">
+          <button class="button" id="submitBtn" style="width: 15%; height: 35px; background-color: #25beaf">SUBMIT</button>
         </div>
         <div class="form-group">
           <input
@@ -99,23 +93,42 @@
             id="textBox"
             name="textBox"
             style="vertical-align: top; width: 80%; height: 180px"
+            readonly
           />
         </div>
         <div class="form-group">
           <input
-            type="submit"
+            type="button"
             value="Save"
-            style="width: 41%; background-color: #00c04b"
+            style="width: 40%; background-color: #00c04b"
           />
           <input
-            type="submit"
+            type="button"
             value="Clear"
-            style="width: 41%; background-color: #ff3632"
+            style="width: 40%; background-color: #ff3632"
           />
         </div>
       </form>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script> $(function() {
+      $("#submitBtn").click(function() {
+        $("#submitBtn").addClass("onclic", 250, validate);
+      });
+  
+      function validate() {
+        setTimeout(function() {
+          $("#submitBtn").removeClass("onclic");
+          $("#submitBtn").addClass("validate", 450, callback);
+        }, 2250);
+      }
+  
+      function callback() {
+        setTimeout(function() {
+          $("#submitBtn").removeClass("validate");
+        }, 1250);
+      }
+    });</script>
     <script src="homepage.js"></script>
   </body>
 </html>
