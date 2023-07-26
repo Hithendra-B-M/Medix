@@ -1,4 +1,3 @@
-// homepage.js
 
 function updateFileNameDisplay() {
   const fileInput = document.getElementById("fileUpload");
