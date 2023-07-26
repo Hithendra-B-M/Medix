@@ -9,6 +9,8 @@ body {
   background-position: center;
   font-family: "Poppins", sans-serif;
   color: #00004d;
+  margin: 0;
+  padding: 0;
 }
 
 /* CSS for the navigation bar */
@@ -266,7 +268,13 @@ body {
   background-color: #ffffff;
   text-decoration: none !important;
 }
-
+.navbar a {
+  transition: all 0.3s ease;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
 /* Additional CSS for mobile responsiveness */
 @media screen and (max-width: 768px) {
   body {

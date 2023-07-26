@@ -254,20 +254,15 @@ body {
 
 .form-group button,
 .form-group input[type="button"]{
-  outline: none;
-  height: 40px;
-  text-align: center;
-  width: 130px;
-  border-radius: 40px;
-  background: #fff;
-  border:none !important;
-  color: #1ECD97;
-  letter-spacing: 1px;
-  text-shadow: 0;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.25s ease;
+  width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
 .form-group button:hover,
 .form-group input[type="button"]:hover{
@@ -361,21 +356,16 @@ body {
     margin: 20px;
   }
   .form-group button {
-    outline: none;
-    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
     text-align: center;
-    width: 130px;
-    border-radius: 40px;
-    background: #fff;
-    border: 2px solid #1ECD97;
-    color: #1ECD97;
-    letter-spacing: 1px;
-    text-shadow: 0;
-    font-size: 12px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.25s ease;
   }
+  
   .form-group input[type="button"],
   .form-group input[type="button"]{
   width: 50%;
@@ -389,7 +379,6 @@ body {
   cursor: pointer;
 }
   .form-group input[type="text"],
-  .form-group button,
   .form-group input[type="button"],
   .form-group input[type="button"]{
     width:100%;
@@ -397,7 +386,16 @@ body {
     max-width: 100%;
     box-sizing: border-box;
   }
-
+  .form-group button {
+    width: 100%;
+    padding: 10px 90px 20px 20px; 
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+  
   .right-section {
     margin-top: 20px;
     margin-left: 2.5rem;
