@@ -194,7 +194,7 @@ body {
 
 .menu-wrap .menu > div > div > ul > li > a {
   color: inherit;
-  text-decoration: none;
+  text-decoration:none;
   transition: color 0.4s ease;
 }
 
@@ -267,6 +267,9 @@ body {
 .form-group input[type="submit"]:hover {
   background-color: #ffffff;
   text-decoration: none !important;
+}
+.form-group input[type="submit"]:active{
+  letter-spacing: 2px;
 }
 .navbar a {
   transition: all 0.3s ease;
