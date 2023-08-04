@@ -2,19 +2,13 @@
   --overlay-color: rgba(24, 39, 51, 0.85);
   --menu-speed: 0.75s;
 }
-
 body {
-  background-image: url("./Static/hospital.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  font-family: "Poppins", sans-serif;
-  background-color: #ffffff;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  background: url("../images/aboutbg.jpg");
+  font-family: "Poppins", sans-serif;
 }
-
-/* CSS for the navigation bar */
 .navbar {
   background-color: #55e6d7;
   overflow: hidden;
@@ -32,7 +26,7 @@ body {
 .navbar img {
   height: 50px;
   width: 150px;
-  margin-top:0.7rem;
+  margin-top: 0.7rem;
 }
 
 .navbar .right-buttons {
@@ -45,7 +39,7 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  transition: font-size 0.2s ease; /* Reduced transition duration */
+  transition: font-size 0.2s ease; 
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
@@ -60,8 +54,6 @@ body {
   font-weight: bolder;
 }
 
-
-/* MENU STYLES */
 .menu-wrap {
   position: fixed;
   top: 0;
@@ -88,10 +80,10 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 9999;
+  z-index:9999;
 }
 
-/* Hamburger Line */
+
 .menu-wrap .hamburger > div {
   position: relative;
   flex: none;
@@ -102,9 +94,10 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease;
+  box-sizing: border-box;
 }
 
-/* Hamburger Lines - Top & Bottom */
+
 .menu-wrap .hamburger > div::before,
 .menu-wrap .hamburger > div::after {
   content: "";
@@ -114,34 +107,32 @@ body {
   width: 30px;
   height: 2px;
   background: inherit;
+  box-sizing: border-box;
 }
 
-/* Moves Line Down */
 .menu-wrap .hamburger > div::after {
   top: 10px;
 }
 
-/* Toggler Animation */
+
 .menu-wrap .toggler:checked + .hamburger > div {
   transform: rotate(135deg);
 }
 
-/* Turns Lines Into X */
+
 .menu-wrap .toggler:checked + .hamburger > div:before,
 .menu-wrap .toggler:checked + .hamburger > div:after {
   top: 0;
   transform: rotate(90deg);
 }
 
-/* Rotate On Hover When Checked */
 .menu-wrap .toggler:checked:hover + .hamburger > div {
   transform: rotate(225deg);
 }
 
-/* Show Menu */
 .menu-wrap .toggler:checked ~ .menu {
   visibility: visible;
-  z-index: 0; /* Move the menu behind the toggler button */
+  z-index: 0; 
 }
 
 .menu-wrap .toggler:checked ~ .menu > div {
@@ -205,109 +196,9 @@ body {
   display: none;
 }
 
-/* CSS for the divisions */
-.left-section,
-.right-section {
-  width: 50%;
-  padding: 20px;
-  box-sizing: border-box;
-  float: left;
-}
-
-.left-section {
-  background-color: #ffffff00;
-}
-
-.container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 40px;
-  background-color: #ffffff6f;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.container h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.form-group input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ebebeb98;
-  font-size: 16px;
-  outline: none;
-}
-
-.form-group button,
-.form-group input[type="button"]{
-  width: 50%;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.form-group button:hover,
-.form-group input[type="button"]:hover{
-  color: white;
-  background: #1ECD97;
-}
-.form-group button:active,
-.form-group input[type="button"]:active{
- letter-spacing: 2px;
-}
-.form-group button:hover,
-.file-label:hover {
-  background-color: #25beaf;
-  color: #fff;
-}
-
-.file-label {
-  cursor: pointer;
-  padding-top: 5px;
-  padding-bottom: 15px;
-  background-color: #25beaf;
-  color: #fff;
-  width: 60%;
-  height: 15px;
-  border-radius: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  display: inline-block;
-}
-
-.hidden-input {
+.active .right-buttons {
   display: none;
 }
-
-.file-name-display {
-  display: inline-block;
-  padding: auto;
-  max-width: 80%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  vertical-align: middle;
-}
-/* Additional CSS to style all buttons */
 .navbar a {
   transition: all 0.3s ease;
   font-size: 20px;
@@ -316,22 +207,9 @@ body {
   position: relative;
 }
 
-.form-group button:hover {
-  text-decoration: none;
-}
-.form-group button {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* Media query for mobile screens */
 @media screen and (max-width: 768px) {
   body {
     background-size: auto;
-  }
-
-  .right-buttons {
-    display: none;
   }
 
   .navbar img {
@@ -339,14 +217,14 @@ body {
     margin-bottom: 10px;
   }
 
+  .right-buttons {
+    display: none;
+  }
   .menu-wrap {
     display: block;
   }
-
   .left-section,
   .right-section {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
     width: 100%;
     float: none;
   }
@@ -355,55 +233,88 @@ body {
     padding: 20px;
     margin: 20px;
   }
-  .form-group button {
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .form-group input[type="button"],
-  .form-group input[type="button"]{
-  width: 50%;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
+
   .form-group input[type="text"],
-  .form-group input[type="button"],
-  .form-group input[type="button"]{
-    width:100%;
-    padding-right: 15px;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  .form-group button {
+  .form-group input[type="text"],
+  .form-group input[type="submit"] {
     width: 100%;
-    padding: 10px 90px 20px 20px; 
-    max-width: 100%;
-    box-sizing: border-box;
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: hidden; /* Hide overflowing text */
-    font-size: 16px; /* Adjust the font size as needed */
-  }
-  
-  .right-section {
-    margin-top: 20px;
-    margin-left: 2.5rem;
   }
 
-  /* Stack sections on mobile screens */
-  .stacked-sections {
-    width: 100%;
-    float: none;
+  .right-section {
+    margin-top: 30px;
+  }
+}
+
+
+
+.footer {
+  text-align: center;
+  background-color: #77d5cb;
+  padding: 10px;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-content {
+  margin-top: -5%;
+  background-color: #ffffff56;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.vision-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #4dc2a5;
+}
+
+.vision-section h2 {
+  margin-bottom: 1rem;
+}
+
+.header {
+  background-color: #007bff;
+  color: black;
+  text-align: center;
+  padding: 1rem;
+}
+
+.heading-container {
+  text-align: center;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.innovative-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #007bff, #00c851) transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+  animation: slide-in 1s forwards;
+  margin-top: 5rem;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

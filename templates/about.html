@@ -5,9 +5,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-  <link rel="icon" href="Logo_IMG_BR.png" type="image/x-icon" />
-  <link rel="shortcut icon" href="Static/Logo_IMG_BR.png" type="image/x-icon" />
-  <link rel="stylesheet" href="about.css" />
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Logo_IMG_BR.png') }}"  />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/Logo_IMG_BR.png') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}"/>
   <title>Medix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -23,9 +23,9 @@
         <div>
           <div>
             <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="homepage.html">Home</a></li>
-              <li><a href="report.html">Report</a></li>
+              <li><a href="{{ url_for('about') }}">About Us</a></li>
+              <li><a href="{{ url_for('homepage') }}">Home</a></li>
+              <li><a href="{{ url_for('report') }}">Report</a></li>
             </ul>
           </div>
         </div>
@@ -35,12 +35,12 @@
   <!-- Navigation Bar -->
   <div class="navbar">
     <div>
-      <img src="Static/Logo.png" alt="Logo" />
+      <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo" />
     </div>
     <div class="right-buttons">
-      <a href="about.html">About Us</a>
-      <a href="homepage.html">Home</a>
-      <a href="report.html">Report</a>
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('homepage') }}">Home</a>
+      <a href="{{ url_for('report') }}">Report</a>
     </div>
   </div>
 
