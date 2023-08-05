@@ -3,9 +3,15 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import io
+import pymongo
+import base64
 
 app = Flask(__name__)
-model = load_model("CAESARS.h5")
+model = load_model("Voidex.h5")
+client = pymongo.MongoClient("mongodb://localhost:27017")
+
+db = client['CES']
+collection = db['ML']
 
 class_labels = [
     "Atelectasis", "Brain_Tumor", "Cardiomegaly", "Consolidation", "Edema", "Effusion",
@@ -30,13 +36,23 @@ def classify():
     predicted_class = class_labels[predicted_class_index]
     print(img)
 
+    # dictionary={
+    #     '_id':1 ,
+    #     'image_data':img
+    # }
+
+    # if image_file:
+    #     base64_string = image_file.read().encode('base64').replace('\n', '')  # Convert image to base64
+    #     # Save the base64_string to your database along with other patient information
+    #     print('Base64 image string:', base64_string)
+    #     return "Image processed successfully!"
+    # else:
+    #     return "No image file received."
+
+    # collection.insert_one(dictionary)
+
     return predicted_class
 
-
-
-@app.route("/demo")
-def demo():
-    return render_template('name.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
