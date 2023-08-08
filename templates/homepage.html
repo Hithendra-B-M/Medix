@@ -48,7 +48,8 @@
   <br /><br /><br /><br /><br />
   <div>
     <!-- Left Section - Creative Registration Form -->
-    <form>
+    <form id="form" name="form" action="/upload" method="post" enctype="multipart/form-data">
+      
       <div class="left-section">
         <br /><br /><br />
         <div class="container">
@@ -74,17 +75,18 @@
         <h2>Upload</h2>
 
         <label for="fileUpload" class="file-label" style="text-align: center; font-size: medium">Choose File</label>
-        <input type="file" id="fileUpload" name="fileUpload" class="hidden-input" onchange="toggleSubmitButton()" /><br>
+
+        <input type="file" id="image" name="image" class="hidden-input" onchange="toggleSubmitButton()" /><br>
+
         <span id="fileNameDisplay" class="file-name-display">No file chosen</span>
 
         <div class="form-group" style="margin-top:5px">
-          <button class="button" id="submitBtn"
+          <button class="button" type="button" id="submit_button" onclick="saveImage()"
             style="width: 15%; height: 35px; background-color: #25beaf">Submit</button>
         </div>
 
         <div class="form-group">
-          <input type="text" id="textBox" name="textBox" style="vertical-align: top; width: 80%; height: 180px"
-            readonly />
+          <div id="result" name="result" style="vertical-align: top; width: 80%; height: 180px"></div>
         </div>
 
         <div class="form-group">
@@ -98,7 +100,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
 
-    $(function () {
+    $(
+      
+      function () {
       $("#submitBtn").click(function () {
         $("#submitBtn").addClass("onclic", 250, validate);
       });
@@ -116,6 +120,34 @@
         }, 1250);
       }
     });
+
+    function saveImage() {
+            const fileInput = document.getElementById('image');
+            const saveButton = document.getElementById('submit_button');
+            const responseText = document.getElementById('result');
+
+            if (fileInput.files.length > 0) {
+                saveButton.disabled = true;
+                const formData = new FormData();
+                formData.append('image', fileInput.files[0]);
+
+                fetch('/save', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.text())
+                .then(result => {
+                    responseText.innerHTML = 'Result: ' + result;
+                    saveButton.disabled = false;
+                })
+                .catch(error => {
+                    responseText.innerHTML = 'Error occurred while saving the image.';
+                    saveButton.disabled = false;
+                });
+            } else {
+                responseText.innerHTML = 'Please choose an image first.';
+            }
+        }
 
 
   </script>

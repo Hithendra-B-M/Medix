@@ -15,5 +15,18 @@ def about():
 def report():
     return render_template('report.html')
 
+@app.route("/save", methods=["POST"])
+def save_image():
+    if request.method == "POST":
+        file = request.files["image"]
+
+        if file:
+            filename = file.filename
+            # file.save(os.path.join("uploads", filename))
+
+            return "1"  # Return 1 if the file was uploaded successfully
+        else:
+            return "0"  # Return 0 if no file was selected
+
 if __name__ == '__main__':
     app.run(debug=True)
