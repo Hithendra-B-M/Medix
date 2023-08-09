@@ -1,6 +1,6 @@
 
 function updateFileNameDisplay() {
-  const fileInput = document.getElementById("fileUpload");
+  const fileInput = document.getElementById("image");
   const fileNameDisplay = document.getElementById("fileNameDisplay");
 
   if (fileInput.files.length > 0) {
@@ -11,7 +11,7 @@ function updateFileNameDisplay() {
 }
 
 // Add event listener to the file input to trigger the update when a file is chosen
-const fileInput = document.getElementById("fileUpload");
+const fileInput = document.getElementById("image");
 fileInput.addEventListener("change", updateFileNameDisplay);
 
 // Call the function on page load to set the initial message
