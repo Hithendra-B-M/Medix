@@ -22,17 +22,16 @@
       </div>
       <div class="menu">
         <div>
-          <div>
             <ul>
               <li><a href="{{ url_for('about') }}">About Us</a></li>
               <li><a href="{{ url_for('homepage') }}">Home</a></li>
               <li><a href="{{ url_for('report') }}">Report</a></li>
             </ul>
-          </div>
         </div>
       </div>
     </div>
   </section>
+
   <!-- Navigation Bar -->
   <div class="navbar">
     <div>
@@ -45,7 +44,8 @@
     </div>
   </div>
 
-  <br /><br /><br /><br /><br />
+  <br/><br/><br/><br/><br/>
+
   <div>
     <!-- Left Section - Creative Registration Form -->
     <form id="form" name="form" action="/upload" method="post" enctype="multipart/form-data">
@@ -75,9 +75,7 @@
         <h2>Upload</h2>
 
         <label for="image" class="file-label" style="text-align: center; font-size: medium">Choose File</label>
-
         <input type="file" id="image" name="image" class="hidden-input" onchange="toggleSubmitButton()" /><br>
-
         <span id="fileNameDisplay" class="file-name-display">No file chosen</span>
 
         <div class="form-group" style="margin-top:5px">

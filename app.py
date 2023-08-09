@@ -1,40 +1,59 @@
-from flask import Flask, render_template, request
+import io
+import base64
+import numpy as np
+from datetime import date
 from pymongo import MongoClient
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
-import numpy as np
-import io
-from datetime import date
-import base64
+from flask import Flask, render_template, request
 
-#Flask
+# Flask
 app = Flask(__name__)
 
-#model
+# model
 model = load_model("Voidex.h5")
 
-#db
+# db
 client = MongoClient("mongodb://localhost:27017/")
 db = client["medix_db"]
 collection = db["patients"]
 
 class_labels = [
-    "Atelectasis", "Brain_Tumor", "Cardiomegaly", "Consolidation", "Edema", "Effusion",
-    "Emphysema", "Fibrosis", "Hernia", "Infiltration", "Mass", "No_Brain_Finding",
-    "No_Lung_Finding", "Nodule", "Pleural", "Pneumonia", "Pneumothorax", "Tuberculosis"
+    "Atelectasis",
+    "Brain_Tumor",
+    "Cardiomegaly",
+    "Consolidation",
+    "Edema",
+    "Effusion",
+    "Emphysema",
+    "Fibrosis",
+    "Hernia",
+    "Infiltration",
+    "Mass",
+    "No_Brain_Finding",
+    "No_Lung_Finding",
+    "Nodule",
+    "Pleural",
+    "Pneumonia",
+    "Pneumothorax",
+    "Tuberculosis",
 ]
 
-@app.route('/')
-def homepage(): #Function name and the url_for name should be same
-    return render_template('homepage.html')
 
-@app.route('/about')
+@app.route("/")
+def homepage():  # Function name and the url_for name should be same
+    return render_template("homepage.html")
+
+
+@app.route("/about")
 def about():
-    return render_template('about.html')
+    return render_template("about.html")
 
-@app.route('/report')
+
+@app.route("/report")
 def report():
-    return render_template('report.html')
+    return render_template("report.html")
+
 
 @app.route("/submit", methods=["POST"])
 def submit_image():
@@ -48,98 +67,83 @@ def submit_image():
         predictions = model.predict(img)
         predicted_class_index = np.argmax(predictions[0])
         predicted_class = class_labels[predicted_class_index]
-        
-        print(img)
-
         return predicted_class
+
 
 @app.route("/save", methods=["POST"])
 def save_image():
     if request.method == "POST":
-
-        image_file = request.files['image']
+        image_file = request.files["image"]
         if image_file:
             image_data = image_file.read()
-            encoded_image = base64.b64encode(image_data).decode('utf-8')
+            encoded_image = base64.b64encode(image_data).decode("utf-8")
 
         patient_id = request.form.get("patient_id")
         patient_name = request.form.get("patient_name")
         result = request.form.get("result")
 
-        current_date = (date.today()).strftime('%Y-%m-%d')
-
-
-        # Save the image name and the respective result to MongoDB
+        current_date = (date.today()).strftime("%Y-%m-%d")
 
         dictionary = {
-            "_id" : {
-                "patient_id":patient_id,
-                "date":current_date
-            },
-            "patient_id" : patient_id,
-            "patient_name" : patient_name,
-            "date" : current_date,
-            "symptoms" : result,
-            "image" : encoded_image
+            "_id": {"patient_id": patient_id, "date": current_date},
+            "patient_id": patient_id,
+            "patient_name": patient_name,
+            "date": current_date,
+            "symptoms": result,
+            "image": encoded_image,
         }
 
-        existing_data = collection.find_one({'_id': { 'patient_id': patient_id, 'date': current_date}})
+        existing_data = collection.find_one(
+            {"_id": {"patient_id": patient_id, "date": current_date}}
+        )
 
         if existing_data:
-
             collection.update_one(
-                {"_id" : {
-                    "patient_id":patient_id,
-                    "date":current_date 
-                    }
-                },
+                {"_id": {"patient_id": patient_id, "date": current_date}},
                 {
-                    '$set': {
-                        "patient_id" : patient_id,
-                        "patient_name" : patient_name,
-                        "date" : current_date,
-                        "symptoms" : result,
-                        "image" : encoded_image
+                    "$set": {
+                        "patient_id": patient_id,
+                        "patient_name": patient_name,
+                        "date": current_date,
+                        "symptoms": result,
+                        "image": encoded_image,
                     }
-                }
-            )
-            return "Data Upadted Successfully"
-
-        else:
-            dictionary = {
-                "_id" : {
-                    "patient_id":patient_id,
-                    "date":current_date
                 },
-                "patient_id" : patient_id,
-                "patient_name" : patient_name,
-                "date" : current_date,
-                "symptoms" : result,
-                "image" : encoded_image
+            )
+            return "Data Updated Successfully"
+
+        elif not existing_data:
+            dictionary = {
+                "_id": {"patient_id": patient_id, "date": current_date},
+                "patient_id": patient_id,
+                "patient_name": patient_name,
+                "date": current_date,
+                "symptoms": result,
+                "image": encoded_image,
             }
 
             collection.insert_one(dictionary)
             return "Data Logged Successfully"
-    
+        
+        else:
+            return "Something Went Wrong"
+
 
 @app.route("/report_analysis", methods=["GET", "POST"])
 def report_analysis():
     error_message = None  # Initialize the error message
-    
+
     if request.method == "POST":
         pid = request.form["patient_id"]
         date_req = request.form["calendarDate"]
         print(date_req)
-        
+
         required_one = {
-            "_id":{
-                "patient_id":pid,
-                "date":date_req
-            },
+            "_id": {"patient_id": pid, "date": date_req},
         }
 
         data = collection.find_one(required_one)
-        
+
         if data:
             patientid = data["patient_id"]
             patientname = data["patient_name"]
@@ -148,11 +152,25 @@ def report_analysis():
             decoded_image = base64.b64decode(encoded_image)
             image_file = base64.b64encode(decoded_image).decode("utf-8")
 
-            return render_template("report.html", image=image_file, patient_id=patientid, patient_name=patientname, symptoms=patientsymptoms)
+            return render_template(
+                "report.html",
+                image=image_file,
+                patient_id=patientid,
+                patient_name=patientname,
+                symptoms=patientsymptoms,
+            )
         else:
-            error_message = "Image not found"
-    
-    return render_template("report.html", image=None, patient_id=None, patient_name=None, symptoms=None, error=error_message)
+            error_message = "Data not found"
 
-if __name__ == '__main__':
-    app.run(debug=True)
+    return render_template(
+        "report.html",
+        image=None,
+        patient_id=None,
+        patient_name=None,
+        symptoms=None,
+        error=error_message,
+    )
+
+
+if __name__ == "__main__":
+    app.run()

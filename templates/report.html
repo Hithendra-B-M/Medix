@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  
   <section class="size">
     <div class="menu-wrap">
       <input type="checkbox" class="toggler" />
@@ -21,17 +22,16 @@
       </div>
       <div class="menu">
         <div>
-          <div>
-            <ul>
-              <li><a href="{{ url_for('about') }}">About Us</a></li>
-              <li><a href="{{ url_for('homepage') }}">Home</a></li>
-              <li><a href="{{ url_for('report') }}">Report</a></li>
-            </ul>
-          </div>
+          <ul>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('homepage') }}">Home</a></li>
+            <li><a href="{{ url_for('report') }}">Report</a></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
+
   <!-- Navigation Bar -->
   <div class="navbar">
     <div>
@@ -43,7 +43,7 @@
       <a href="{{ url_for('report') }}">Report</a>
     </div>
   </div>
-  <br /><br /><br />
+  <br/><br/><br/>
   <!-- Left Section - Creative Registration Form -->
 
   <div class="left-section">
@@ -51,22 +51,22 @@
     <div class="container">
       <h2>Enter details</h2>
 
-      <form method="POST" action="/report_analysis" onsubmit="return displayImage();">
+      <form method="POST" action="/report_analysis" onsubmit="return displayImage();" >
 
         <div class="form-group">
           <label for="patient_name">Patient Name:</label>
-          <input type="text" id="patient_name" name="patient_name" autocomplete="off" />
+          <input type="text" id="patient_name" name="patient_name" autocomplete="off" required/>
         </div>
 
         <div class="form-group">
           <label for="patient_id">Patient ID:</label>
-          <input type="text" id="patient_id" name="patient_id" autocomplete="off" />
+          <input type="text" id="patient_id" name="patient_id" autocomplete="off" required/>
         </div>
 
         <div class="form-group">
           <div class="date-input-container">
             <label for="calendarDate">Date:</label>
-            <input type="date" id="calendarDate" name="calendarDate" placeholder="Choose date" />
+            <input type="date" id="calendarDate" name="calendarDate" placeholder="Choose date" required/>
           </div>
         </div>
 
@@ -82,10 +82,11 @@
   <div class="right-section">
     <br /><br />
     <h2>Report</h2>
+
     <div class="form-group">
 
       {% if error %}
-        <p style="color: red;">{{ error }}</p>
+      <p style="color: rgb(212, 0, 0); font-size: 30px; font-weight: bolder;">{{ error }}</p>
       {% endif %}
 
       {% if image %}
@@ -94,8 +95,9 @@
         <h2>Symptoms: {{symptoms}}</h2>
         <img id="image" src="data:image/png;base64,{{ image }}" alt="Image" height="240px" width="240px">
         <br>
-        <a href="data:image/png;base64,{{ image }}" download="image_{{ patient_id }}.png"><button style="width: 20%; height: 35px; background-color: #0437f2" >Download Image</button></a>
-        {% endif %}
+        <a href="data:image/png;base64,{{ image }}" download="image_{{ patient_id }}.png"><button
+            style="width: 20%; height: 35px; background-color: #0437f2">Download Image</button></a>
+      {% endif %}
     </div>
   </div>
 
