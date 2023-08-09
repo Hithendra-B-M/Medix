@@ -66,7 +66,8 @@ def save_image():
         patient_name = request.form.get("patient_name")
         result = request.form.get("result")
 
-        current_date = (date.today()).strftime('%d-%m-%Y')
+        current_date = (date.today()).strftime('%Y-%m-%d')
+        print(current_date)
 
 
 
@@ -75,17 +76,42 @@ def save_image():
 
         dictionary = {
             "_id" : patient_id,
-            "Patient_id" : patient_id,
-            "Patient_name" : patient_name,
-            "Date" : current_date,
-            "Result" : result,
-            "Image" : encoded_image
+            "patient_id" : patient_id,
+            "patient_name" : patient_name,
+            "date" : current_date,
+            "symptoms" : result,
+            "image" : encoded_image
         }
 
         collection.insert_one(dictionary)
 
         return "Image name and result submitted successfully."
+    
 
+@app.route("/report_analysis", methods=["GET", "POST"])
+def report_analysis():
+    error_message = None  # Initialize the error message
+    
+    if request.method == "POST":
+        pid = request.form["patient_id"]
+        date_req = request.form["calendarDate"]
+        print(date_req)
+        
+        data = collection.find_one({"_id": pid, "date":date_req})
+        
+        if data:
+            patientid = data["patient_id"]
+            patientname = data["patient_name"]
+            patientsymptoms = data["symptoms"]
+            encoded_image = data["image"]
+            decoded_image = base64.b64decode(encoded_image)
+            image_file = base64.b64encode(decoded_image).decode("utf-8")
+
+            return render_template("report.html", image=image_file, patient_id=patientid, patient_name=patientname, symptoms=patientsymptoms)
+        else:
+            error_message = "Image not found"
+    
+    return render_template("report.html", image=None, patient_id=None, patient_name=None, symptoms=None, error=error_message)
 
 if __name__ == '__main__':
     app.run(debug=True)
