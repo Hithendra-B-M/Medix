@@ -85,6 +85,8 @@ def save_image():
         collection.insert_one(dictionary)
 
         return "Image name and result submitted successfully."
+    
+
 
 
 if __name__ == '__main__':
