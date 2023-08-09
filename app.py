@@ -65,7 +65,9 @@ def save_image():
         patient_id = request.form.get("patient_id")
         patient_name = request.form.get("patient_name")
         result = request.form.get("result")
-        datee = str(date.today())
+
+        current_date = (date.today()).strftime('%d-%m-%Y')
+
 
 
 
@@ -75,7 +77,7 @@ def save_image():
             "_id" : patient_id,
             "Patient_id" : patient_id,
             "Patient_name" : patient_name,
-            "Date" : datee,
+            "Date" : current_date,
             "Result" : result,
             "Image" : encoded_image
         }
