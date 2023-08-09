@@ -84,6 +84,16 @@ function saveImage() {
     });
 }
 
+
+function clearFields(){
+  document.getElementById("patient_name").value = "";
+  document.getElementById("patient_id").value = "";
+  document.getElementById("image").value = "";
+  document.getElementById("result").innerHTML = "";
+  updateFileNameDisplay();
+}
+
+
 // Add event listener to the file input to trigger the update when a file is chosen
 const fileInput = document.getElementById("image");
 fileInput.addEventListener("change", updateFileNameDisplay);
