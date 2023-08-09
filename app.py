@@ -67,15 +67,15 @@ def save_image():
         result = request.form.get("result")
 
         current_date = (date.today()).strftime('%Y-%m-%d')
-        print(current_date)
-
-
 
 
         # Save the image name and the respective result to MongoDB
 
         dictionary = {
-            "_id" : patient_id,
+            "_id" : {
+                "patient_id":patient_id,
+                "date":current_date
+            },
             "patient_id" : patient_id,
             "patient_name" : patient_name,
             "date" : current_date,
@@ -83,9 +83,43 @@ def save_image():
             "image" : encoded_image
         }
 
-        collection.insert_one(dictionary)
+        existing_data = collection.find_one({'_id': { 'patient_id': patient_id, 'date': current_date}})
 
-        return "Image name and result submitted successfully."
+        if existing_data:
+
+            collection.update_one(
+                {"_id" : {
+                    "patient_id":patient_id,
+                    "date":current_date 
+                    }
+                },
+                {
+                    '$set': {
+                        "patient_id" : patient_id,
+                        "patient_name" : patient_name,
+                        "date" : current_date,
+                        "symptoms" : result,
+                        "image" : encoded_image
+                    }
+                }
+            )
+            return "Data Upadted Successfully"
+
+        else:
+            dictionary = {
+                "_id" : {
+                    "patient_id":patient_id,
+                    "date":current_date
+                },
+                "patient_id" : patient_id,
+                "patient_name" : patient_name,
+                "date" : current_date,
+                "symptoms" : result,
+                "image" : encoded_image
+            }
+
+            collection.insert_one(dictionary)
+            return "Data Logged Successfully"
     
 
 @app.route("/report_analysis", methods=["GET", "POST"])
@@ -97,7 +131,14 @@ def report_analysis():
         date_req = request.form["calendarDate"]
         print(date_req)
         
-        data = collection.find_one({"_id": pid, "date":date_req})
+        required_one = {
+            "_id":{
+                "patient_id":pid,
+                "date":date_req
+            },
+        }
+
+        data = collection.find_one(required_one)
         
         if data:
             patientid = data["patient_id"]
