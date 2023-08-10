@@ -60,16 +60,32 @@ function submitImage() {
 }
 
 function saveImage() {
-  const Patient_Name = document.getElementById('patient_name').value;
-  const Patient_Id = document.getElementById('patient_id').value;
-  const responseText = document.getElementById('result').innerText;
-  const image_file = document.getElementById('image');
+  const patientName = document.getElementById('patient_name').value;
+  const patientId = document.getElementById('patient_id').value;
+  const result = document.getElementById('result').innerHTML;
+  const image = document.getElementById('image');
+  
+
+  if (patientName === '' || patientId === '') {
+    alert('Plese fill the Patient ID and Patient Name');
+    return;
+  }
+
+  if(image.files.length === 0){
+    alert("Plese choose an Image First")
+    return;
+  }
+
+  if(result === ''){
+    alert('click of the submit button befor saving the Data')
+    return;
+  }
 
   const formData = new FormData();
-  formData.append('image', image_file.files[0]);
-  formData.append('patient_id', Patient_Id);
-  formData.append('patient_name', Patient_Name);
-  formData.append('result', responseText);
+  formData.append('image', image.files[0]);
+  formData.append('patient_id', patientId);
+  formData.append('patient_name', patientName);
+  formData.append('result', result)
 
   fetch('/save', {
     method: 'POST',
@@ -77,10 +93,11 @@ function saveImage() {
   })
     .then(response => response.text())
     .then(result => {
-      alert(result);
+      // document.getElementById('result').innerHTML = result;
+      alert(result)
     })
     .catch(error => {
-      alert('Error occurred while submitting the image and data.');
+      alert('Error occurred while saving the data')
     });
 }
 
