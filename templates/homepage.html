@@ -22,6 +22,7 @@
       </div>
       <div class="menu">
         <div>
+        <div>
             <ul>
               <li><a href="{{ url_for('about') }}">About Us</a></li>
               <li><a href="{{ url_for('homepage') }}">Home</a></li>
@@ -30,6 +31,7 @@
         </div>
       </div>
     </div>
+  </div>
   </section>
 
   <!-- Navigation Bar -->
@@ -55,6 +57,7 @@
         <div class="container">
 
           <h2>Registration Form</h2>
+          
 
           <div class="form-group">
             <label for="name">Patient Name:</label>
@@ -65,15 +68,18 @@
             <label for="email">Patient ID:</label>
             <input type="text" id="patient_id" name="patient_id" />
           </div>
-
         </div>
+      </div></form>
+
+        
       </div>
 
       <!-- Right Section - Upload -->
       <div class="right-section">
 
         <h2>Upload</h2>
-
+        <form>
+          
         <label for="image" class="file-label" style="text-align: center; font-size: medium">Choose File</label>
         <input type="file" id="image" name="image" class="hidden-input" onchange="toggleSubmitButton()" /><br>
         <span id="fileNameDisplay" class="file-name-display">No file chosen</span>
@@ -93,7 +99,6 @@
           <button type="button" id="clear_button" onclick="clearFields()"
             style="width: 40%; ">Clear</button>
         </div>
-
     </form>
   </div>
 

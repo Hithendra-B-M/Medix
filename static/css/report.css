@@ -166,9 +166,8 @@ body {
 
 .menu-wrap .menu > div {
   background: var(--overlay-color);
-  border-radius: 50%;
-  width: 200vw;
-  height: 200vw;
+  width: 100vw;
+  height: 100vw;
   display: flex;
   flex: none;
   align-items: center;
@@ -292,10 +291,13 @@ body {
   .menu-wrap {
     display: block;
   }
-  
+  .menu-wrap .menu > div {
+    width: 100%; /* Full width in portrait mode */
+    height: 100%; /* Full height in portrait mode */
+  }
   .left-section,
   .right-section {
-    margin-left: 1rem;
+    margin-left: 0;
     margin-right: 1rem;
     width: 100%;
     float: none;
@@ -319,6 +321,6 @@ body {
     margin-top: 10px;
   }
   .right-section{
-    margin-left: 2.5rem;
+    margin-left:0;
   }
 }

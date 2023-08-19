@@ -169,9 +169,8 @@ body {
 
 .menu-wrap .menu > div {
   background: var(--overlay-color);
-  border-radius: 50%;
-  width: 200vw;
-  height: 200vw;
+  width: 100vw;
+  height: 100vw;
   display: flex;
   flex: none;
   align-items: center;
@@ -212,6 +211,7 @@ body {
   padding: 20px;
   box-sizing: border-box;
   float: left;
+  box-sizing: border-box;
 }
 
 .left-section {
@@ -221,7 +221,7 @@ body {
 .container {
   max-width: 500px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px;
   background-color: #ffffff6f;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -245,7 +245,8 @@ body {
 
 .form-group input[type="text"] {
   width: 100%;
-  padding: 10px;
+  padding: 10px 0;
+
   border-radius: 5px;
   border: 1px solid #ebebeb98;
   font-size: 16px;
@@ -279,6 +280,7 @@ body {
     cursor: pointer;
   }
   .form-group button#submit_button{
+    text-align: center;
     background-color: #2edfce;
     /* border: 2px solid #25beaf; */
     color: #fff;
@@ -288,12 +290,14 @@ body {
     color: #fff;
   }
   .form-group button#save_button {
+    padding: 10px;
     background-color:#38c038c6;
      /* Green border color */
     color: #fff;
   }
   
   .form-group button#clear_button {
+  padding: 10px;
     background-color: #e31717d3;
      /* Red border color */
     color:  #fff
@@ -358,6 +362,18 @@ body {
   .menu-wrap {
     display: block;
   }
+.menu-wrap .menu > div {
+    width: 100%; /* Full width in portrait mode */
+    height: 100%; /* Full height in portrait mode */
+  }
+  .left-section,
+.right-section {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  float: left;
+  box-sizing: border-box;
+}
 
   .left-section,
   .right-section {
@@ -386,7 +402,6 @@ body {
   
   .right-section {
     margin-top: 20px;
-    margin-left: 2.5rem;
   }
 
   /* Stack sections on mobile screens */
