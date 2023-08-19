@@ -14,7 +14,7 @@ app = Flask(__name__)
 model = load_model("Voidex.h5")
 
 # db
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient("mongodb+srv://karthik:admin1234@data.kv0kadm.mongodb.net/?retryWrites=true&w=majority")
 db = client["medix_db"]
 collection = db["patients"]
 

@@ -289,6 +289,16 @@ body {
     background-color: #25beaf;
     color: #fff;
   }
+  .output-box {
+    background-color: white;
+    width: 34rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px 10px 10px 10px;
+    height: 180px;
+    overflow: auto; /* Enable scrolling if content exceeds box height */
+  }
+  
   .form-group button#save_button {
     padding: 10px;
     background-color:#38c038c6;
