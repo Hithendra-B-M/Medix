@@ -33,6 +33,7 @@ body {
   height: 50px;
   width: 150px;
   margin-top:0.7rem;
+  margin-left: 0.5rem;
 }
 
 .navbar .right-buttons {
@@ -379,15 +380,13 @@ body {
   .navbar img {
     margin-left: 0;
     margin-bottom: 10px;
+    margin-left: 0.5rem;
   }
 
   .menu-wrap {
     display: block;
   }
-.menu-wrap .menu > div {
-    width: 100%; /* Full width in portrait mode */
-    height: 100%; /* Full height in portrait mode */
-  }
+
   .left-section,
 .right-section {
   width: 50%;

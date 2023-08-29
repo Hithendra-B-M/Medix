@@ -27,6 +27,7 @@ body {
   height: 50px;
   width: 150px;
   margin-top: 0.7rem;
+  margin-left: 0.5rem;
 }
 
 .navbar .right-buttons {
@@ -213,8 +214,9 @@ body {
   }
 
   .navbar img {
-    margin-left: 0;
+    margin-left: 0.5rem;
     margin-bottom: 10px;
+  
   }
 
   .right-buttons {
@@ -320,12 +322,5 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@media screen and (max-width: 768px) {
-  /* Adjust the overlay dimensions for mobile devices */
-  .menu-wrap .menu > div {
-    width: 100%; /* Full width in portrait mode */
-    height: 100%; /* Full height in portrait mode */
   }
 }
