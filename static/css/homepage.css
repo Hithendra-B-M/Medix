@@ -1,4 +1,4 @@
-:root {
+ :root {
   --overlay-color: rgba(24, 39, 51, 0.85);
   --menu-speed: 0.75s;
 }
@@ -33,6 +33,7 @@ body {
   height: 50px;
   width: 150px;
   margin-top:0.7rem;
+  margin-left: 0.5rem;
 }
 
 .navbar .right-buttons {
@@ -212,6 +213,7 @@ body {
   padding: 20px;
   box-sizing: border-box;
   float: left;
+  box-sizing: border-box;
 }
 
 .left-section {
@@ -221,7 +223,11 @@ body {
 .container {
   max-width: 500px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 25px 25px 30px 20px;
+  /* padding-left: 20px;
+  padding-right: 25px;
+  padding-bottom: 30px;
+  padding-top: 25px; */
   background-color: #ffffff6f;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -245,45 +251,19 @@ body {
 
 .form-group input[type="text"] {
   width: 100%;
-  padding: 10px;
+  padding: 10px 0;
+  padding-left: 10px ;
+  margin-right: 2rem;
   border-radius: 5px;
   border: 1px solid #ebebeb98;
   font-size: 16px;
   outline: none;
 }
-
-.form-group button,
-.form-group input[type="button"]{
-  width: 50%;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.form-group button:hover,
-.form-group input[type="button"]:hover{
-  color: white;
-  background: #1ECD97;
-}
-.form-group button:active,
-.form-group input[type="button"]:active{
- letter-spacing: 2px;
-}
-.form-group button:hover,
-.file-label:hover {
-  background-color: #25beaf;
-  color: #fff;
-}
-
 .file-label {
   cursor: pointer;
   padding-top: 5px;
   padding-bottom: 15px;
-  background-color: #25beaf;
+  background-color: #2edfce;
   color: #fff;
   width: 60%;
   height: 15px;
@@ -293,6 +273,69 @@ body {
   text-align: center;
   display: inline-block;
 }
+
+.form-group button
+  {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .form-group button#submit_button{
+    text-align: center;
+    background-color: #2edfce;
+    /* border: 2px solid #25beaf; */
+    color: #fff;
+  }
+  .form-group button#submit_button:hover{
+    background-color: #25beaf;
+    color: #fff;
+  }
+  .output-box {
+    background-color: white;
+    width: 34rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px 10px 10px 10px;
+    height: 180px;
+    overflow: auto; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .form-group button#save_button {
+    padding: 10px;
+    background-color:#38c038c6;
+     /* Green border color */
+    color: #fff;
+  }
+  
+  .form-group button#clear_button {
+  padding: 10px;
+    background-color: #e31717d3;
+     /* Red border color */
+    color:  #fff
+
+  }
+  
+  .form-group button#save_button:hover {
+    background-color: #38c038; /* Green background color on hover */
+    color: #ffffff; /* White text color on hover */
+  }
+  
+  .form-group button#clear_button:hover {
+    background-color: #ff0000; /* Red background color on hover */
+    color: #ffffff; /* White text color on hover */
+  }
 
 .hidden-input {
   display: none;
@@ -337,11 +380,21 @@ body {
   .navbar img {
     margin-left: 0;
     margin-bottom: 10px;
+    margin-left: 0.5rem;
   }
 
   .menu-wrap {
     display: block;
   }
+
+  .left-section,
+.right-section {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  float: left;
+  box-sizing: border-box;
+}
 
   .left-section,
   .right-section {
@@ -354,38 +407,10 @@ body {
   .container {
     padding: 20px;
     margin: 20px;
+    padding-left: 0;
+    padding: 30px;
   }
-  .form-group button {
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .form-group input[type="button"],
-  .form-group input[type="button"]{
-  width: 50%;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-  .form-group input[type="text"],
-  .form-group input[type="button"],
-  .form-group input[type="button"]{
-    width:100%;
-    padding-right: 15px;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
+
   .form-group button {
     width: 100%;
     padding: 10px 90px 20px 20px; 
@@ -393,12 +418,16 @@ body {
     box-sizing: border-box;
     white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden; /* Hide overflowing text */
-    font-size: 16px; /* Adjust the font size as needed */
+    font-size: 16px; 
+    text-align: center;
+    cursor: pointer;/* Adjust the font size as needed */
   }
-  
+  .output-box{
+    width: auto;
+  }
+
   .right-section {
     margin-top: 20px;
-    margin-left: 2.5rem;
   }
 
   /* Stack sections on mobile screens */

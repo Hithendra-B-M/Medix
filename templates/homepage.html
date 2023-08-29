@@ -22,6 +22,7 @@
       </div>
       <div class="menu">
         <div>
+        <div>
             <ul>
               <li><a href="{{ url_for('about') }}">About Us</a></li>
               <li><a href="{{ url_for('homepage') }}">Home</a></li>
@@ -30,6 +31,7 @@
         </div>
       </div>
     </div>
+  </div>
   </section>
 
   <!-- Navigation Bar -->
@@ -55,6 +57,7 @@
         <div class="container">
 
           <h2>Registration Form</h2>
+          
 
           <div class="form-group">
             <label for="name">Patient Name:</label>
@@ -65,35 +68,37 @@
             <label for="email">Patient ID:</label>
             <input type="text" id="patient_id" name="patient_id" />
           </div>
-
         </div>
+      </div></form>
+
+        
       </div>
 
       <!-- Right Section - Upload -->
       <div class="right-section">
 
         <h2>Upload</h2>
-
+        <form>
+          
         <label for="image" class="file-label" style="text-align: center; font-size: medium">Choose File</label>
         <input type="file" id="image" name="image" class="hidden-input" onchange="toggleSubmitButton()" /><br>
         <span id="fileNameDisplay" class="file-name-display">No file chosen</span>
 
         <div class="form-group" style="margin-top:5px">
           <button class="button" type="button" id="submit_button" onclick="submitImage()"
-            style="width: 15%; height: 35px; background-color: #25beaf">Submit</button>
+            style="width: 15%; height: 35px;">Submit</button>
         </div>
 
         <div class="form-group">
-          <div id="result" name="result" style="vertical-align: top; width: 80%; height: 180px"></div>
+          <div class="output-box"><div id="result" name="result" ></div></div>
         </div>
 
         <div class="form-group">
           <button type="button" id="save_button" onclick="saveImage()"
-            style="width: 40%; background-color: #00c04b">Save</button>
+            style="width: 40%;">Save</button>
           <button type="button" id="clear_button" onclick="clearFields()"
-            style="width: 40%; background-color: #ff3632">Clear</button>
+            style="width: 40%; ">Clear</button>
         </div>
-
     </form>
   </div>
 
