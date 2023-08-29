@@ -166,8 +166,9 @@ body {
 
 .menu-wrap .menu > div {
   background: var(--overlay-color);
-  width: 100vw;
-  height: 100vw;
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vw;
   display: flex;
   flex: none;
   align-items: center;
@@ -358,7 +359,9 @@ body {
     padding: 20px;
     margin: 20px;
   }
-
+  .error-box{
+    width:auto;
+  }
   .form-group input[type="text"],
   .form-group input[type="date"] {
     width: 100%;

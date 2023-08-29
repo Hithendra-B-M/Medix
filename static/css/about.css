@@ -160,8 +160,9 @@ body {
 
 .menu-wrap .menu > div {
   background: var(--overlay-color);
-  width: 100vw;
-  height: 100vw;
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vw;
   display: flex;
   flex: none;
   align-items: center;
