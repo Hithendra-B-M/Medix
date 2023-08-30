@@ -1,3 +1,4 @@
-![IMG](https://github.com/k-arthik-r/Medix/assets/111432615/8ab041f5-cbab-44e7-85f5-ce4311920eb8)
+![IMG](https://github.com/k-arthik-r/Medix/assets/111432615/5d42dc49-bad1-42bb-81ad-1ea1df2f5e7a)
+
 
 ------------------------------------
