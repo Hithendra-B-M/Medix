@@ -14,9 +14,9 @@ app = Flask(__name__)
 model = load_model("Voidex.h5")
 
 # db
-client = MongoClient("mongodb+srv://karthik:admin1234@data.kv0kadm.mongodb.net/?retryWrites=true&w=majority")
-db = client["medix_db"]
-collection = db["patients"]
+client = MongoClient(<MongoDB_Connection_String>)
+db = client[<Database_Name>]
+collection = db[<Collection_Name>]
 
 class_labels = [
     "Atelectasis",
@@ -173,4 +173,4 @@ def report_analysis():
 
 
 if __name__ == "__main__":
-    app.run(debug=True,host='192.168.137.22')
+    app.run(debug=True)
