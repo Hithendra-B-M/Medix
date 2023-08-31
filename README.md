@@ -102,3 +102,16 @@ You can find the Detailed Report of the CNN Model in this folder [CNN Model](CNN
 
 ## Demo
 
+https://github.com/k-arthik-r/Medix/assets/111432615/20607bfd-091c-4604-8ba5-25ec8b36790c
+
+----------------------------
+
+## License
+
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+
+----------------------------
+
+## Feedback
+If you have any feedback, please reach out to us at voidex.developer@gmail.com .
+You are also welcomed to add new features by creating Pull Requests.
