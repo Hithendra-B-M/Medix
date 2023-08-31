@@ -75,10 +75,10 @@ You can find the Detailed Report of the CNN Model in this folder [CNN Model](CNN
 ---------------------
 
 ## Features
-- Simple and Easy to use - Medix has been designed to promote simplicity so that every end user can use it without any problem.
-- Cloud Storage - The Database used to Manage the data of the Medix is MongoDB Atlas, a Cloud storage service. One of the advantage of such is that multiple users can manipulate data from different places simutaneously.
-- Large Dataset - The ML Model is trained and tested using a Large Dataset for better Accuracy. Read more [Here](CNN_Model)
-- ML Model - The Machine Learning Model trained is capable of Classifiying the Images into 18 Different classes Namely
+- **Simple and Easy to use** - Medix has been designed to promote simplicity so that every end user can use it without any problem.
+- **Cloud Storage** - The Database used to Manage the data of the Medix is MongoDB Atlas, a Cloud storage service. One of the advantage of such is that multiple users can manipulate data from different places simutaneously.
+- **Large Dataset** - The ML Model is trained and tested using a Large Dataset for better Accuracy. Read more [Here](CNN_Model)
+- **ML Model** - The Machine Learning Model trained is capable of Classifiying the Images into 18 Different classes Namely
     - Atelectasis X-001
     - Brain_Tumor X-002
     - Cardiomegaly X-003
