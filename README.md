@@ -16,7 +16,7 @@
 ------------------------
 
 ## Requirments
-Python 
+Python 3.11.3 (Recommended)
 
 <a href="https://www.python.org/downloads/" alt="3.11.1">
         <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" /></a>
