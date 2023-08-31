@@ -15,6 +15,10 @@
 
 ------------------------
 
+Welcome to Medix, an innovative platform that combines the power of deep learning with advanced medical imaging technology to assist doctors and medical professionals in diagnosing lung-related abnormalities and brain tumors. Our mission is to enhance the accuracy and efficiency of medical diagnosis, enabling early detection and timely treatment of various medical conditions.
+
+-----------------------
+
 ## Requirments
 Python 3.11.3 (Recommended)
 
@@ -61,4 +65,12 @@ python app.py
 ```bash
 https://www.kaggle.com/datasets/voidexiae/nih-chest-x-ray-voidex
 ```
+
+----------------------
+
+## CNN Model
+
+You can find the Detailed Report of the CNN Model in this folder [CNN Model](CNN_Model)
+
+---------------------
 
