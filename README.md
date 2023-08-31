@@ -22,6 +22,6 @@ Python
         <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" /></a>
 
 ### Modules Imported
-You can find all the Modules Imported in the app.py [Here](requirments.txt)
+You can find all the Modules Imported in the app.py [Here](requirements.txt)
 
 -------------------------
