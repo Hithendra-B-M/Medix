@@ -113,5 +113,4 @@ https://github.com/k-arthik-r/Medix/assets/111432615/20607bfd-091c-4604-8ba5-25e
 ----------------------------
 
 ## Feedback
-If you have any feedback, please reach out to us at voidex.developer@gmail.com .
 You are also welcomed to add new features by creating Pull Requests.
