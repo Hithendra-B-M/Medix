@@ -1,5 +1,5 @@
 <div align="center">
-<image src="https://github.com/k-arthik-r/Medix/assets/111432615/5d42dc49-bad1-42bb-81ad-1ea1df2f5e7a"/>
+<image src="https://github.com/hithendra-b-m/Medix/assets/111432615/5d42dc49-bad1-42bb-81ad-1ea1df2f5e7a"/>
 </div>
   
 ------------------------
@@ -34,7 +34,7 @@ You can find all the Modules Imported in the app.py [Here](requirements.txt)
 - Download a Zip file or clone  the Project using 
 
 ```bash
-https://github.com/k-arthik-r/Medix.git
+https://github.com/Hithendra-B-M/Medix.git
 ```
 <br>
 
@@ -102,7 +102,7 @@ You can find the Detailed Report of the CNN Model in this folder [CNN Model](CNN
 
 ## Demo
 
-https://github.com/k-arthik-r/Medix/assets/111432615/20607bfd-091c-4604-8ba5-25ec8b36790c
+https://github.com/hithendra-b-m/Medix/assets/111432615/20607bfd-091c-4604-8ba5-25ec8b36790c
 
 ----------------------------
 
